@@ -58,7 +58,7 @@ public class ShowroomCarBillRepository extends DBHelper{
 			String ToDate=String.join("-",arr1);
 			
 			String varDate=fromDate;
-			pstmt=conn.prepareStatement("SELECT sum(total) FROM showroomcustbill WHERE billdate between ? and ? and month(billdate) != ?;");
+			pstmt=conn.prepareStatement(properties.getProperty("getMonthWiseSell"));
 			while(!varDate.equals(ToDate))
 			{
 				//System.out.println(varDate+" "+ToDate);
